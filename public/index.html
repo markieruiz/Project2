@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/lumen/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+    <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+    <form>
+        <input id="myloc" type="text" value="30.267140, -97.743076">
+        <input type="submit" name="submit" id="test">
+    </form>
+    <script>
+    $(document).ready(function() {
+
+        $("#test").on("click", function(event) {
+            event.preventDefault();
+            console.log("Button Worked!")
+            filterSearch();
+        });
+        
+        function filterSearch() {
+            var myloc = {location: $("#myloc").val()};
+            console.log(myloc)
+            $.ajax({
+                url: "/api/meetup",
+                method: "PUT",
+                data: myloc,
+                dataType: 'json'
+            }).then(function(results) {
+                console.log(results);
+            });
+        }    
+    });
+    </script>
+</body>
+</html>
+
+
+

@@ -4,20 +4,25 @@ var geolib = require("geolib");
 module.exports = function(app) {
   // Get all examples
   app.get("/", function(req, res) {
-    var location1 = { latitude: 30.267140, longitude: -97.743076 };
-    var location2 = { latitude: 30.278935, longitude: -97.736108 };
-    var distance = geolib.getDistance(location1, location2);
-    var miles = (distance * 0.000621371).toFixed(2);
-    res.json(miles + " miles");
+    // var location1 = { latitude: 30.267140, longitude: -97.743076 };
+    // var location2 = { latitude: 30.278935, longitude: -97.736108 };
+    // var distance = geolib.getDistance(location1, location2);
+    // var miles = (distance * 0.000621371).toFixed(2);
+    // res.json(miles + " miles");
   });
 
-  app.get("/api/meetup", function(req, res) {
-    db.Meetup.findAll({}).then(function(results) {
-      var temp = JSON.stringify(results);
-      var locations = JSON.parse(temp);
+  app.put("/api/meetup", function(req, res) {
+    console.log(req.body);
+    db.Meetup.findAll({}).then(function(locations) {
+      var coords = req.body.location.split(",");
+      var location1 = {
+        latitude: parseFloat(coords[0]),
+        longitude: parseFloat(coords[1])
+      };
+      // var temp = JSON.stringify(results);
+      // var locations = JSON.parse(temp);
       var distanceArray = [];
       for (i in locations) {
-        var location1 = { latitude: 30.267140, longitude: -97.743076 };
         var location2 = {
           latitude: locations[i].latitude,
           longitude: locations[i].longitude
@@ -25,9 +30,7 @@ module.exports = function(app) {
         var distance = geolib.getDistance(location1, location2);
         var miles = (distance * 0.000621371).toFixed(2);
         distanceArray.push(locations[i].title + ": " + miles + " miles");
-
       }
-
       res.json(distanceArray);
     });
   });
