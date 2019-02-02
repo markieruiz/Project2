@@ -1,8 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
     firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    description: DataTypes.TEXT
+    lastName: DataTypes.STRING
   });
   User.associate = function(models) {
     User.hasMany(models.Meetup, {
