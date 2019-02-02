@@ -1,3 +1,12 @@
+//TODO:
+//1. Added more filters to filter api: sports, time, ?
+//2. User Login
+//3. Meetup Update
+//NOT MVP:
+//3. Comments
+//4. Add to Calendar
+//5. 
+
 var db = require("../models");
 var geolib = require("geolib");
 
@@ -12,7 +21,8 @@ module.exports = function(app) {
   });
 
   app.put("/api/filter", function(req, res) {
-    console.log(req.body);
+    //var sports = {};
+    //sports = req.body.sports;
     db.Meetup.findAll({}).then(function(locations) {
       var coords = req.body.location.split(",");
       var location1 = {
@@ -54,7 +64,7 @@ module.exports = function(app) {
     });
   });
 
-  app.put("/api/meetup", function(req, res) {
+  app.put("/api/meetup/:id", function(req, res) {
     db.Meetup.update(req.body).then(function(dbExample) {
       res.json(dbExample);
     });
@@ -63,8 +73,8 @@ module.exports = function(app) {
 
 
   // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
+  app.delete("/api/meetup/:id", function(req, res) {
+    db.Meetup.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
       res.json(dbExample);
     });
   });
