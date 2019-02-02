@@ -24,12 +24,12 @@
         });
         
         function filterSearch() {
-            var myloc = {location: $("#myloc").val()};
-            console.log(myloc)
+            var myfilter = {location: $("#myloc").val(), distance: 5};
+            console.log(myfilter);
             $.ajax({
-                url: "/api/meetup",
+                url: "/api/filter",
                 method: "PUT",
-                data: myloc,
+                data: myfilter,
                 dataType: 'json'
             }).then(function(results) {
                 console.log(results);

@@ -11,7 +11,7 @@ module.exports = function(app) {
     // res.json(miles + " miles");
   });
 
-  app.put("/api/meetup", function(req, res) {
+  app.put("/api/filter", function(req, res) {
     console.log(req.body);
     db.Meetup.findAll({}).then(function(locations) {
       var coords = req.body.location.split(",");
@@ -19,8 +19,6 @@ module.exports = function(app) {
         latitude: parseFloat(coords[0]),
         longitude: parseFloat(coords[1])
       };
-      // var temp = JSON.stringify(results);
-      // var locations = JSON.parse(temp);
       var distanceArray = [];
       for (i in locations) {
         var location2 = {
@@ -29,7 +27,9 @@ module.exports = function(app) {
         };
         var distance = geolib.getDistance(location1, location2);
         var miles = (distance * 0.000621371).toFixed(2);
-        distanceArray.push(locations[i].title + ": " + miles + " miles");
+        if (miles <= req.body.distance) {
+          distanceArray.push(locations[i].title + ": " + miles + " miles");
+        }
       }
       res.json(distanceArray);
     });
