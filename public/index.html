@@ -12,6 +12,7 @@
 <body>
     <form>
         <input id="myloc" type="text" value="30.267140, -97.743076">
+        <input type="number" name="distance" id="distance">
         <input type="submit" name="submit" id="test">
     </form>
     <script>
@@ -24,7 +25,7 @@
         });
         
         function filterSearch() {
-            var myfilter = {location: $("#myloc").val(), distance: 5};
+            var myfilter = {location: $("#myloc").val(), distance: $("#distance").val()};
             console.log(myfilter);
             $.ajax({
                 url: "/api/filter",

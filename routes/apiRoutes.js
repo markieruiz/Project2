@@ -28,7 +28,7 @@ module.exports = function(app) {
         var distance = geolib.getDistance(location1, location2);
         var miles = (distance * 0.000621371).toFixed(2);
         if (miles <= req.body.distance) {
-          distanceArray.push(locations[i].title + ": " + miles + " miles");
+          distanceArray.push(locations[i]);
         }
       }
       res.json(distanceArray);
