@@ -3,18 +3,16 @@ module.exports = function(sequelize, DataTypes) {
     text: DataTypes.STRING,
     description: DataTypes.TEXT
   });
-  Meetup.belongsTo(models.User, {
-    foreignKey: {
-      allowNull: false
-    }
-  });
-  Meetup.hasMany(models.Remark, {
-    onDelete: "cascade",
-    foreignKey: {
-      name: "remarkId",
-      allowNull: false
-    }
-  });
+  Meetup.associate = function(models) {
+    Meetup.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+    Meetup.hasMany(models.Remark, {
+      onDelete: "cascade"
+    });
+  };
 
   return Meetup;
 };

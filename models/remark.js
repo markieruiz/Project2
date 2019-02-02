@@ -1,6 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   var Remark = sequelize.define("Remark", {
-    remarkId: DataTypes.INTEGER,
     text: DataTypes.STRING
   });
   Remark.associate = function(models) {
@@ -8,19 +7,15 @@ module.exports = function(sequelize, DataTypes) {
     // A Post can't be created without an Author due to the foreign key constraint
     Remark.belongsTo(models.Meetup, {
       foreignKey: {
-        name: "remarkId",
         allowNull: false
       }
     });
     Remark.belongsTo(models.User, {
       foreignKey: {
-        name: "remarkId",
         allowNull: false
       }
     });
-
   };
-
 
   return Remark;
 };
