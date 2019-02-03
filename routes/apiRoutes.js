@@ -2,13 +2,15 @@
 //1. Added more filters to filter api: sports, time, ?
 //2. User Login
 //3. Meetup Update
+//4. ENV files
 //NOT MVP:
-//3. Comments
-//4. Add to Calendar
-//5. 
+//1. Comments
+//2. Add to Calendar
+//3. hhh
 
 var db = require("../models");
 var geolib = require("geolib");
+var Sequelize = require("sequelize");
 
 module.exports = function(app) {
   // Get all examples
@@ -21,10 +23,19 @@ module.exports = function(app) {
   });
 
   app.put("/api/filter", function(req, res) {
-    //var sports = {};
-    //sports = req.body.sports;
-    db.Meetup.findAll({}).then(function(locations) {
-      var coords = req.body.location.split(",");
+    var sports = [];
+    var todaytime = new Date();
+    console.log(typeof(req.body["sports[]"])); 
+    console.log(req.body["sports[]"].length);
+    if (typeof(req.body["sports[]"]) != "undefined" && req.body["sports[]"].length> 0 && typeof(req.body["sports[]"]) === "object") {
+      sports = req.body["sports[]"];
+    } else if (typeof(req.body["sports[]"]) != "undefined" && req.body["sports[]"].length> 0 && typeof(req.body["sports[]"]) === "string") {
+      sports.push(req.body["sports[]"]);
+    }
+    console.log(sports);
+    db.Meetup.findAll({ where: { [Sequelize.Op.and]: [{ "sport": { [Sequelize.Op.in]: sports } }, { "starttime" : { [Sequelize.Op.gte]: todaytime } }] } })
+    .then(function(locations) {
+      var coords = req.body.location.split(",");  
       var location1 = {
         latitude: parseFloat(coords[0]),
         longitude: parseFloat(coords[1])

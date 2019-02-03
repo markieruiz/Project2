@@ -12,7 +12,10 @@
 <body>
     <form>
         <input id="myloc" type="text" value="30.267140, -97.743076">
-        <input type="number" name="distance" id="distance">
+        <input type="number" name="distance" id="distance"> 
+        <input type="checkbox" class="sports" name="baseball" id="baseball">Baseball
+        <input type="checkbox" class="sports" name="basketball" id="basketball">Basketball
+        <input type="checkbox" class="sports" name="soccer" id="soccer">Soccer
         <input type="submit" name="submit" id="test">
     </form>
     <script>
@@ -25,7 +28,20 @@
         });
         
         function filterSearch() {
-            var myfilter = {location: $("#myloc").val(), distance: $("#distance").val()};
+            var checks = $(".sports");
+            var mysports = [];
+            for (let i = 0; i < 3; i++) {
+                if (checks[i].checked == true) {
+                    mysports.push(checks[i].id);
+                }
+                
+            }
+            console.log(mysports);
+            var myfilter = {
+                location: $("#myloc").val(),
+                distance: $("#distance").val(),
+                sports: mysports
+                };
             console.log(myfilter);
             $.ajax({
                 url: "/api/filter",
