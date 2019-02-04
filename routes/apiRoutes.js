@@ -2,7 +2,7 @@
 //Done1. Added more filters to filter api: sports, time
 //2. User Login
 //DONE3. Meetup Update
-//4. ENV files
+//4.DONE ENV files
 //NOT MVP:
 //1. Comments
 //2. Add to Calendar
@@ -96,8 +96,17 @@ module.exports = function(app) {
   });
 
   app.put("/api/user", function(req, res) {
-    db.Meetup.update(req.body).then(function(dbExample) {
-      res.json(dbExample);
+    db.Meetup.update(
+      {
+        firstname: req.body.firstname,
+        lastname: req.body.lastname
+      }, {
+        where: {
+          id: req.body.id
+        }
+      }
+    ).then(function(results) {
+      res.json(results);
     });
   });
 
