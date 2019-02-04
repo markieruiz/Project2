@@ -34,6 +34,7 @@ module.exports = function(app) {
     }
     //Calls the Sequelize FindAll function on the Meetup table with the search filters (sports, window of time) given by the incoming data
     db.Meetup.findAll({ where: { [Sequelize.Op.and]: [{ "sport": { [Sequelize.Op.in]: sports } }, { "starttime" : { [Sequelize.Op.gte]: starttime } }, { "starttime" : { [Sequelize.Op.lte]: endtime } }] } })
+    //
     .then(function(locations) {
       //Splits the string recieved from data into two integers, longitude and lattitude
       var coords = req.body.location.split(",");  
@@ -50,9 +51,10 @@ module.exports = function(app) {
         };
         //Calls the geolib npm to get distance between two places using longitude and latitude
         var distance = geolib.getDistance(location1, location2);
-        //Converts output (given in meters) to miles and rounding to decimal places
-        var miles = (distance * 0.000621371).toFixed(2);
+        //Converts output (given in meters) to miles
+        var miles = (distance * 0.000621371);
         //If location is within the required distance it is added to an array 
+        var counter = 1;
         if (miles <= req.body.distance) {
           distanceArray.push(locations[i]);
         }

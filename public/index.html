@@ -15,8 +15,8 @@
         <input type="number" name="distance" id="distance" value="10"> 
         <input type="checkbox" class="sports" name="baseball" id="baseball">Baseball
         <input type="checkbox" class="sports" name="basketball" id="basketball">Basketball
-        <input type="checkbox" class="sports" name="soccer" id="soccer">Soccer
-        <input type="datetime-local" name="starttime" id="starttime" value="2019-02-13T15:30">No Later Than
+        <input type="checkbox" class="sports" name="soccer" id="soccer" checked>Soccer
+        <input type="datetime-local" name="starttime" id="starttime" value="2019-02-19T15:30">No Later Than
         <input type="submit" name="submit" id="test">
     </form>
     <script>
@@ -32,7 +32,6 @@
             var starttime = $("#starttime").val();
             var mysports = [];
             var testdate = new Date();
-            console.log(testdate, testdate+7)
             for (let i = 0; i < 3; i++) {
                 if (checks[i].checked == true) {
                     mysports.push(checks[i].id);
