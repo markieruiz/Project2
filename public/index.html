@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/lumen/bootstrap.min.css" />
     <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/index.js"></script>
+    <style> 
+        #map {
+            height: 500px;
+        }
+    </style>
 </head>
 <body>
     <form>
@@ -16,9 +22,13 @@
         <input type="checkbox" class="sports" name="baseball" id="baseball">Baseball
         <input type="checkbox" class="sports" name="basketball" id="basketball">Basketball
         <input type="checkbox" class="sports" name="soccer" id="soccer" checked>Soccer
-        <input type="datetime-local" name="starttime" id="starttime" value="2019-02-19T15:30">No Later Than
+        <input type="datetime-local" name="starttime" id="starttime" value="2019-02-25T15:30">No Later Than
         <input type="submit" name="submit" id="test">
     </form>
+    <br>
+    <br>
+    <br>
+    <div id="map"></div>
     <script>
     $(document).ready(function() {
 
@@ -51,11 +61,38 @@
             }).then(function(results) {
                 console.log(results);
             });
-        }    
+        }   
+        
     });
+    var map;
+    var marker = null;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 30.314786, lng: -97.738267},
+            zoom: 12
+        });
+        map.addListener('click', function(e) {
+            if (marker != null) {
+                marker.setMap(null);
+            }
+            placeMarkerAndPanTo(e.latLng, map);
+        });
+    } 
+    function placeMarkerAndPanTo(latLng, map) {
+        
+        marker = new google.maps.Marker({
+            position: latLng,
+            map: map
+        });
+        var lat = marker.getPosition().lat();
+        var long =  marker.getPosition().lng();
+        var coords = lat+", "+long;
+        console.log(coords);
+        $("#myloc").val(coords);
+        //map.panTo(latLng);
+}
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeVsDpithk85NHs2VG00TxrDQnM6PfMcg&callback=initMap"
+    async defer></script>
 </body>
 </html>
-
-
-
