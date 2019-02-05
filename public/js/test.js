@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 
   $("#test").on("click", function(event) {
@@ -28,13 +27,31 @@ $(document).ready(function() {
           data: myfilter,
           dataType: 'json'
       }).then(function(results) {
-          console.log(results);
+          deleteMarkers();
+          for (i in results) {
+            var marker = new google.maps.Marker({
+                position: { lat: parseFloat(results[i].latitude), lng: parseFloat(results[i].longitude) },
+                map: map
+            });
+            markers.push(marker);
+            var infowindow = new google.maps.InfoWindow({
+                content: '<h4>' + results[i].title + '</h4>' + '<br/>' +
+                    '<p>' + results[i].description + '</p>' + "<button id=' "+ i + "'>Select</button>"
+            });
+            infowindows.push(infowindow);
+            
+        }
+        showMarkers();
+        console.log("finish")
       });
   }   
   
 });
+
 var map;
 var marker = null;
+var markers = [];
+var infowindows = [];
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 30.314786, lng: -97.738267},
@@ -44,22 +61,78 @@ function initMap() {
       if (marker != null) {
           marker.setMap(null);
       }
+      for (var j=0; j < infowindows.length; j++) {
+        infowindows[j].close();
+      }
       placeMarkerAndPanTo(e.latLng, map);
   });
 } 
 function placeMarkerAndPanTo(latLng, map) {
-  
-  marker = new google.maps.Marker({
-      position: latLng,
-      map: map
-  });
-  var lat = marker.getPosition().lat();
-  var long =  marker.getPosition().lng();
-  var coords = lat+", "+long;
-  console.log(coords);
-  $("#myloc").val(coords);
-  //map.panTo(latLng);
+    marker = new google.maps.Marker({
+        position: latLng,
+        map: map
+    });
+    var lat = marker.getPosition().lat();
+    var long =  marker.getPosition().lng();
+    var coords = lat+", "+long;
+    $("#myloc").val(coords);
+    //map.panTo(latLng);
 }
+
+// Sets the map on all markers in the array.
+function setMapOnAll(map) {
+    for (var i = 0; i < markers.length; i++) {
+    let infowindow = infowindows[i];
+    let marker = markers[i];
+    markers[i].setMap(map);
+
+    google.maps.event.addListener(marker, 'click', function() {
+        for (var j=0; j < infowindows.length; j++) {
+            infowindows[j].close();
+        }
+        infowindow.open(map, marker);
+    });
+    }
+}
+
+// Removes the markers from the map, but keeps them in the array.
+function clearMarkers() {
+    setMapOnAll(null);
+}
+
+// Shows any markers currently in the array.
+function showMarkers() {
+    setMapOnAll(map);
+}
+
+// Deletes all markers in the array by removing references to them.
+function deleteMarkers() {
+    clearMarkers();
+    markers = [];
+    infowindows = [];
+    console.log("cleared", markers);
+}
+//infowindow.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //--------------------------------------------------------------------------
 
 // Get references to page elements
