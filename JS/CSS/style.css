@@ -1,5 +1,6 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+@import url('https://fonts.googleapis.com/css?family=Yantramanav:100');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400');
 
 
 html, body {
@@ -12,7 +13,7 @@ html, body {
     height: 100%;
     width: 100%;
     margin: auto;
-    background: url(https://images.pexels.com/photos/19664/pexels-photo.jpg?cs=srgb&dl=grass-lawn-sports-field-19664.jpg&fm=jpg);
+    background: url(https://images.unsplash.com/photo-1486882430381-e76d701e0a3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80) no-repeat 50%;
     display:table;
     top: 0;
     background-size: cover;
@@ -30,31 +31,57 @@ html, body {
     padding-bottom: 27%;
 }
 .content h1 {
-    font-family: "Nunito+Sans", sans-serif;
-    font-size: 500%;
-    font-weight: 100;
-    color: #e1efe9;
-    line-height: 150%;
+    font-family: "Yantramanav", sans-serif;
+    font-size: 700%;
+    font-weight: 200;
+    color: orange;
+    line-height: 120%;
 }
 .btn-find {
     font-family: "Montserrat", sans-serif;
-    font-size: 135%;
-    font-weight: 400;
+    font-size: 200%;
+    font-weight: 500;
     text-transform: uppercase;
+    color: white;
+    background: black;
     text-decoration: none;
     padding-bottom: 30px;
-    /* border: solid; */
+    border: solid;
     padding: 10px 20px;
-    /* border-radius: 9px; */
+    border-radius: 9px;
 
 }
 .btn-create {
     font-family: "Montserrat", sans-serif;
-    font-size: 135%;
-    font-weight: 400;
+    font-size: 200%;
+    font-weight: 500;
+    color: whitesmoke;
+    background: black;
     text-transform: uppercase;
     text-decoration: none;
-    /* border: solid; */
+    border: solid;
     padding: 10px 20px;
-    /* border-radius: 9px; */
+    border-radius: 9px;
 }
+.btn-find:hover {
+    color: green;
+}
+.btn-create:hover {
+    color: green;
+}
+
+
+
+
+/* Create Game Page Styling */
+
+.col-md-6  {
+    padding-top: 50px;
+}
+
+.create {
+    background: url(https://images.unsplash.com/photo-1547934045-2942d193cb49?ixlib=rb-1.2.1&auto=format&fit=crop&w=2110&q=80);
+}
+
+
+
