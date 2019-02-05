@@ -16,6 +16,8 @@
     "express-handlebars": "^3.0.0",
     "geolib": "^2.0.24",
     "mysql2": "^1.6.4",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
     "sequelize": "^4.41.2"
   },
   "devDependencies": {
