@@ -3,7 +3,6 @@ var express = require("express");
 var exphbs = require("express-handlebars");
 var authRoutes = require("./routes/authRoutes");
 var passportSetup = require("./config/passport-setup");
-
 var db = require("./models");
 
 var app = express();
