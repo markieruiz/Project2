@@ -15,15 +15,23 @@
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
+        <h3>Login to google:</h3>
+        {{!-- <ul id="example-list" class="list-group">
           {{#each examples}}
           <li data-id="{{this.id}}" class="list-group-item">
             <a href="example/{{this.id}}">{{this.text}}</a>
             <button class="btn btn-danger float-right delete">ｘ</button>
           </li>
           {{/each}}
+        </ul> --}}
+        <ul>
+          <li><a href="/auth/logout">Logout</a></li>
+          <li><a href="/auth/login">Login</a></li>
+          <li><a href="/">Homepage</a></li>
         </ul>
+        <main>
+          <a class="google-btn" href="/auth/google">Google+</a>
+        </main>
       </div>
     </div>
   </div>
