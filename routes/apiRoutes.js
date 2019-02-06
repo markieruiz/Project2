@@ -4,14 +4,6 @@ var Sequelize = require("sequelize");
 
 module.exports = function(app) {
  
-  // app.get("/", function(req, res) {
-  //   var location1 = { latitude: 30.267140, longitude: -97.743076 };
-  //   var location2 = { latitude: 30.278935, longitude: -97.736108 };
-  //   var distance = geolib.getDistance(location1, location2);
-  //   var miles = (distance * 0.000621371).toFixed(2);
-  //   res.json(miles + " miles");
-  // });
-
   app.put("/api/filter", function(req, res) {
     var sports = [];
     var starttime = new Date();
@@ -23,7 +15,8 @@ module.exports = function(app) {
       sports.push(req.body["sports[]"]);
     }
     //Calls the Sequelize FindAll function on the Meetup table with the search filters (sports, window of time) given by the incoming data
-    db.Meetup.findAll({ where: { [Sequelize.Op.and]: [{ "sport": { [Sequelize.Op.in]: sports } }, { "starttime" : { [Sequelize.Op.gte]: starttime } }, { "starttime" : { [Sequelize.Op.lte]: endtime } }] } })
+    //eslint-disable-next-line Parsing Error
+    db.Meetup.findAll({ where: { [Sequelize.Op.and]: [{ "sport": { [Sequelize.Op.in]: sports } }, { "starttime" : { [Sequelize.Op.gte]: starttime } }, { "starttime" : { [Sequelize.Op.lte]: endtime } }] } }) // eslint-disable-line
     //
     .then(function(locations) {
       //Splits the string recieved from data into two integers, longitude and lattitude

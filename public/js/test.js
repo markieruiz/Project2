@@ -26,8 +26,8 @@ $(document).ready(function() {
       dataType: "json"
     }).then(function(results) {
       deleteMarkers();
-      for (i in results) {
-        let marker = new google.maps.Marker({
+      for (i in results) { 
+        let marker = new google.maps.Marker({ // eslint-disable-line
           position: {
             lat: parseFloat(results[i].latitude),
             lng: parseFloat(results[i].longitude)
