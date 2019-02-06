@@ -6,21 +6,13 @@
 //NOT MVP:
 //3. Comments
 //4. Add to Calendar
-//5. 
+//5.
 
 var db = require("../models");
 var geolib = require("geolib");
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/", function(req, res) {
-    // var location1 = { latitude: 30.267140, longitude: -97.743076 };
-    // var location2 = { latitude: 30.278935, longitude: -97.736108 };
-    // var distance = geolib.getDistance(location1, location2);
-    // var miles = (distance * 0.000621371).toFixed(2);
-    // res.json(miles + " miles");
-  });
-
   app.put("/api/filter", function(req, res) {
     //var sports = {};
     //sports = req.body.sports;
@@ -71,11 +63,11 @@ module.exports = function(app) {
     });
   });
 
-
-
   // Delete an example by id
   app.delete("/api/meetup/:id", function(req, res) {
-    db.Meetup.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
+    db.Meetup.destroy({ where: { id: req.params.id } }).then(function(
+      dbExample
+    ) {
       res.json(dbExample);
     });
   });
