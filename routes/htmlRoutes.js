@@ -9,6 +9,7 @@ module.exports = function(app) {
   //Just for testing
   app.get("/test", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/test.html"));
+  });
 
   // Load example page and pass in an example by id
   app.get("/findGame/:id", function(req, res) {
@@ -19,7 +20,6 @@ module.exports = function(app) {
         example: dbExample
       });
     });
-
   });
 
   // Render 404 page for any unmatched routes
