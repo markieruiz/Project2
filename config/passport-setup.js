@@ -1,6 +1,6 @@
+require("dotenv").config();
 var passport = require("passport");
 var GoogleStrategy = require("passport-google-oauth20");
-var keys = require("./keys");
 var db = require("../models");
 
 passport.serializeUser(function(user, done) {
@@ -18,8 +18,8 @@ passport.use(
     {
       //options for the google strategy
       callbackURL: "/auth/google/redirect",
-      clientID: keys.clientID,
-      clientSecret: keys.clientSecret
+      clientID: process.env.clientID,
+      clientSecret: process.env.clientSecret
     },
     function(accessToken, refreshToken, profile, done) {
       //check if User already exists in our database

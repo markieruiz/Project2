@@ -1,45 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/lumen/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
-    <script src="https://code.jquery.com/jquery.js"></script>
+	<title>Full Screen Landing Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./JS/CSS/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<link href="./JS/CSS/animate.css" rel="stylesheet"/>
+	<link href="./JS/CSS/waypoint.css" rel="stylesheet"/>
+	<script src="./JS/jquery.waypoints.min.js" type="text/javascript"></script>
+	<script src="./JS/waypoint.js" type="text/javascript"></script>
 </head>
 <body>
-    <form>
-        <input id="myloc" type="text" value="30.267140, -97.743076">
-        <input type="number" name="distance" id="distance">
-        <input type="submit" name="submit" id="test">
-    </form>
-    <script>
-    $(document).ready(function() {
-
-        $("#test").on("click", function(event) {
-            event.preventDefault();
-            console.log("Button Worked!")
-            filterSearch();
-        });
-        
-        function filterSearch() {
-            var myfilter = {location: $("#myloc").val(), distance: $("#distance").val()};
-            console.log(myfilter);
-            $.ajax({
-                url: "/api/filter",
-                method: "PUT",
-                data: myfilter,
-                dataType: 'json'
-            }).then(function(results) {
-                console.log(results);
-            });
-        }    
-    });
-    </script>
+	<section class="intro">
+		<div class="inner">		
+			<div class="content">
+				<section class="os-animation" data-os-animation="bounceInUp" data-os-animation-delay="0s">
+					<h1>Game It Up!</h1>
+				</section>
+				<section class="os-animation" data-os-animation="bounceInUp" data-os-animation-delay=".1s">
+					<a class="btn-find" href="#">Find Game</a>
+				</section>
+				<section class="os-animation" data-os-animation="bounceInUp" data-os-animation-delay=".1s">
+					<a class="btn-create" href="#">Create Game</a>
+				</section>
+			</div>
+		</div>
+	</section>
+	<!-- About Us Section -->
+	<h4>About Us</h4>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
 </body>
 </html>
-
-
-

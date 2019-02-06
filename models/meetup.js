@@ -2,6 +2,8 @@ module.exports = function(sequelize, DataTypes) {
   var Meetup = sequelize.define("Meetup", {
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
+    sport: DataTypes.STRING,
+    starttime: DataTypes.DATE,
     latitude: DataTypes.DECIMAL(8, 6),
     longitude: DataTypes.DECIMAL(8, 6)
   });

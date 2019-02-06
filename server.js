@@ -4,7 +4,6 @@ var exphbs = require("express-handlebars");
 var authRoutes = require("./routes/authRoutes");
 // eslint-disable-next-line no-unused-vars
 var passportSetup = require("./config/passport-setup");
-var keys = require("./config/keys");
 var db = require("./models");
 var cookieSession = require("cookie-session");
 var passport = require("passport");
@@ -15,7 +14,7 @@ var PORT = process.env.PORT || 3000;
 app.use(
   cookieSession({
     maxAge: 24 * 60 * 60 * 1000,
-    keys: [keys.cookieKey]
+    keys: [process.env.cookieKey]
   })
 );
 
