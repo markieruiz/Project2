@@ -1,13 +1,3 @@
-//TODO:
-//Done1. Added more filters to filter api: sports, time
-//2. User Login
-//DONE3. Meetup Update
-//4.DONE ENV files
-//NOT MVP:
-//1. Comments
-//2. Add to Calendar
-//3. hhh
-
 var db = require("../models");
 var geolib = require("geolib");
 var Sequelize = require("sequelize");
