@@ -71,8 +71,6 @@ html, body {
 }
 
 
-
-
 /* Create Game Page Styling */
 
 .col-md-6  {
@@ -83,5 +81,10 @@ html, body {
     background: url(https://images.unsplash.com/photo-1547934045-2942d193cb49?ixlib=rb-1.2.1&auto=format&fit=crop&w=2110&q=80);
 }
 
+/* About Us Styling */
+
+#aboutname {
+    color: black;
+}
 
 
