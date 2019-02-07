@@ -81,13 +81,11 @@ html, body {
     background: url(https://images.unsplash.com/photo-1547934045-2942d193cb49?ixlib=rb-1.2.1&auto=format&fit=crop&w=2110&q=80);
 }
 
-<<<<<<< HEAD:public/styles/style.css
 /* About Us Styling */
 
 #aboutname {
     color: black;
 }
-=======
 .wallpaper {
     height: 100%;
     width: 100%;
@@ -129,6 +127,5 @@ html, body {
     float:left;
   }
 
->>>>>>> master:JS/CSS/style.css
 
 
