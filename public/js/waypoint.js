@@ -1,27 +1,28 @@
-$(function(){
-    function onScrollInit( items, trigger ) {
-        items.each( function() {
-        var osElement = $(this),
-            osAnimationClass = osElement.attr('data-os-animation'),
-            osAnimationDelay = osElement.attr('data-os-animation-delay');
-          
-            osElement.css({
-                '-webkit-animation-delay':  osAnimationDelay,
-                '-moz-animation-delay':     osAnimationDelay,
-                'animation-delay':          osAnimationDelay
-            });
+$(function() {
+  function onScrollInit( items, trigger ) {
+    items.each( function() {
+      var osElement = $(this),
+        osAnimationClass = osElement.attr("data-os-animation"),
+        osAnimationDelay = osElement.attr("data-os-animation-delay");
 
-            var osTrigger = ( trigger ) ? trigger : osElement;
-            
-            osTrigger.waypoint(function() {
-                osElement.addClass('animated').addClass(osAnimationClass);
-                },{
-                    triggerOnce: true,
-                    offset: '80%'
-            });
-        });
-    }
+      osElement.css({
+        "-webkit-animation-delay":  osAnimationDelay,
+        "-moz-animation-delay":     osAnimationDelay,
+        "animation-delay":          osAnimationDelay
+      });
 
-    onScrollInit( $('.os-animation') );
-    onScrollInit( $('.staggered-animation'), $('.staggered-animation-container') );
-});//]]>  
+      var osTrigger = ( trigger ) ? trigger : osElement;
+
+      osTrigger.waypoint(function() {
+        osElement.addClass("animated").addClass(osAnimationClass);
+      },{
+        {
+          triggerOnce: true,
+        offset: "80%"
+      });
+    });
+  }
+
+  onScrollInit( $(".os-animation") );
+  onScrollInit( $(".staggered-animation"), $(".staggered-animation-container") );
+}); //]]>

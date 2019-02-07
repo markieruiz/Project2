@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS gameitup;
+CREATE DATABASE gameitup;

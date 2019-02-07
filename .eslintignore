@@ -1,2 +1,7 @@
 models/index.js
 node_modules
+.gitignore
+db/seed.sql
+db/schema.sql
+routes/apiRoutes.js
+public/js/test.js
