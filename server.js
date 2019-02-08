@@ -20,7 +20,7 @@ app.use(
 
 //initialize passport
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session({resave: false}));
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
