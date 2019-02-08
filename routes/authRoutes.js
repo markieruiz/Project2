@@ -2,6 +2,8 @@
 var router = require("express").Router();
 var db = require("../models");
 var passport = require("passport");
+var path = require("path");
+
 
 function authCheck(req, res, next) {
   if (!req.user) {
@@ -38,11 +40,7 @@ router.get("/google/redirect", passport.authenticate("google"), function(
   res
 ) {
   // res.send(req.user)
-  res.send(
-    "you are logged in! this is your profile" +
-      req.user.firstName +
-      req.user.lastName
-  );
+  res.sendFile(path.join(__dirname, "../public/create.html"));
 });
 
 module.exports = router;
