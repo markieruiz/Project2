@@ -2,6 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Yantramanav:100');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400');
 
+/* Nav Bar Style */
+
+.navbar a {
+    color: orange;
+    font-style: italic;
+}
+
 
 html, body {
     margin: 0;
@@ -13,7 +20,7 @@ html, body {
     height: 100%;
     width: 100%;
     margin: auto;
-    background: url(https://images.unsplash.com/photo-1486882430381-e76d701e0a3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80) no-repeat 50%;
+    background: url(https://images.unsplash.com/photo-1544919982-b61976f0ba43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2110&q=80) no-repeat 50%;
     display:table;
     top: 0;
     background-size: cover;
@@ -28,15 +35,18 @@ html, body {
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
-    padding-bottom: 27%;
+    /* padding-bottom: 27%; */
 }
 .content h1 {
-    font-family: "Yantramanav", sans-serif;
-    font-size: 700%;
-    font-weight: 200;
+    /* font-family: "Yantramanav", sans-serif; */
+    font-size: 600%;
+    font-weight: 300;
     color: orange;
     line-height: 120%;
+    text-transform: uppercase;
+    font-style: italic;
 }
+
 .btn-find {
     font-family: "Montserrat", sans-serif;
     font-size: 200%;
@@ -64,10 +74,10 @@ html, body {
     border-radius: 9px;
 }
 .btn-find:hover {
-    color: green;
+    color: tan;
 }
 .btn-create:hover {
-    color: green;
+    color:tan;
 }
 
 
@@ -79,15 +89,34 @@ html, body {
 
 .create {
     background: url(https://images.unsplash.com/photo-1547934045-2942d193cb49?ixlib=rb-1.2.1&auto=format&fit=crop&w=2110&q=80);
+    
 }
 
 /* About Us Styling */
 
-#aboutname {
-    color: black;
+#aboutname:hover {
+    color:black;
+    font-family: "Yantramanav", sans-serif;
+    text-decoration: none;
+    opacity: 0.5;
+
 }
 
+<<<<<<< HEAD
 .find {
+=======
+#headerabout {
+    font-family: "Yantramanav", sans-serif;
+    color:black;
+}
+
+.aboutp {
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.wallpaper {
+>>>>>>> cf800499801c3633da1087452b3c832ffa52b252
     height: 100%;
     width: 100%;
     margin: auto;
