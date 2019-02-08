@@ -4,49 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create your Game!</title>
+    <title>Find your Game!</title>
     <link rel="stylesheet" type="text/css" href="./styles/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/test.js"></script>
 </head>
-<body class="create">
-
-    <!-- Nav Bar -->
-
+<body class="find">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">Game It Up</a>
+        <a class="navbar-brand" href="./index.html">Game It Up</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-            aria-expanded="false" aria-label="Toggle navigation">
+         aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Find Game</a>
+                    <a class="nav-link" href="#">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="myLinkToBottom">Our Team</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <!-- Main Page -->
     <div class="main-container">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <!-- Default form contact -->
-                    <form class="text-center p-5">
+                        <style> 
+                                #map {
+                                    height: 800px;
+                                    width: 800px;
+                                    margin: 0 auto;
+                                }
+                                #form {
+                                    margin: 10px auto;
+                                }
+                             </style>
+
+<div id="form">
+        <form>
+            <input id="myloc" type="text" value="30.267140, -97.743076">
+            <input type="number" name="distance" id="distance" value="10"> 
+            <input type="checkbox" class="sports" name="baseball" id="baseball">Baseball
+            <input type="checkbox" class="sports" name="basketball" id="basketball" checked>Basketball
+            <input type="checkbox" class="sports" name="soccer" id="soccer">Soccer
+            <input type="datetime-local" name="starttime" id="starttime" value="2019-02-25T15:30">No Later Than
+            <input type="submit" name="submit" id="test">
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="map"></div>
+    <script>
+    
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeVsDpithk85NHs2VG00TxrDQnM6PfMcg&callback=initMap"
+    async defer></script>
+                    <!-- <form class="text-center p-5">
         
                         <p class="h4 mb-4">Create A New Game</p>
-        
-                        <!-- Name -->
                         <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">
-        
-                        <!-- Location -->
                         <input type="text" id="defaultContactFormLocation" class="form-control mb-4" placeholder="Location">
-
-                        <!-- Time -->
                         <input type="text" id="defaultContactFormTime" class="form-control mb-4" placeholder="Time (HH:MM AM or PM)"
-        
-                        <!-- Subject -->
                         <label><b>Sports</b></label>
                         <select class="browser-default custom-select mb-4">
                             <option value="" disabled>Choose Sports</option>
@@ -54,19 +80,14 @@
                             <option value="2">Flag Football</option>
                             <option value="3">Tennis</option>
                             <option value="4">Ultimate Frisbee</option>
-                        </select>
+                        </select> 
         
-                        <!-- Message -->
                         <div class="form-group">
                             <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
-                        </div>
-        
-                        <!-- Send button -->
+                        </div>            
                         <button class="btn btn-info btn-block" type="submit">Send</button>
-        
                     </form>
-                    <!-- Default form contact -->
-                </div>
+                </div>  -->
 
                 <!-- Google Maps  -->
                 <div class="col-md-6" id="googlemaps">
