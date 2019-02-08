@@ -40,7 +40,11 @@
 					<div class="col-md-6">
 						<form class="text-center p-5">
 							<p class="h4 mb-4">Find a Game</p>
+							<form>
+									<input id="myloc" type="text" value="30.267140, -97.743076">
 							<input type="text" id="defaultContactFormLocation" class="form-control mb-4" placeholder="Location">
+							<input type="number" name="distance" id="distance" value="10">
+							</form>
 							<label><b>Sports</b></label>
 							<select class="browser-default custom-select mb-4">
 								<option value="" disabled>Choose Sports</option>
@@ -67,9 +71,9 @@
 						</div>
 
 						<div id="map"></div>
-						<script>
+						<!-- <script>
 
-						</script>
+						</script> -->
 						<script
 							src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeVsDpithk85NHs2VG00TxrDQnM6PfMcg&callback=initMap"
 							async defer></script>
