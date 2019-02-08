@@ -40,7 +40,7 @@ router.get("/google/redirect", passport.authenticate("google"), function(
   res
 ) {
   // res.send(req.user)
-  res.sendFile(path.join(__dirname, "../public/create.html"));
+  res.redirect("/");
 });
 
 module.exports = router;
