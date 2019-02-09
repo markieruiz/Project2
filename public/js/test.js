@@ -1,7 +1,8 @@
 $(document).ready(function () {
-  $("#test").on("click", function (event) {
+  $("#creategame").on("click", function (event) {
     event.preventDefault();
-    filterSearch();
+    var id = $("#creategame").data("id")
+    console.log(id);
   });
 
   function filterSearch() {
