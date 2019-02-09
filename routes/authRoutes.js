@@ -28,7 +28,7 @@ router.get("/findgame", authCheck, function(req, res) {
 });
 
 router.get("/creategame", authCheck, function(req, res) {
-  res.redirect("/create");
+  res.render("create", { user: req.user });
 });
 
 // auth logout
