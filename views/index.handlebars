@@ -1,45 +1,126 @@
-{{!-- <div id="home">
+<!DOCTYPE html>
+<head>
+    <title>Game it UP!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link href="../../styles/animate.css" rel="stylesheet"/>
+    <link href="../../styles/waypoint.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../../styles/style.css">
+    <script src="../../js/jquery.waypoints.min.js" type="text/javascript"></script>
+    <script src="../../js/waypoint.js" type="text/javascript"></script>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="./index.html">Game It Up</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+         aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                
+                {{#if user}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/auth/logout">Sign Out</a>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/auth/google">Sign In</a>
+                </li>
+                {{/if}}
+                <li class="nav-item">
+                    <a class="nav-link" id="myLinkToBottom">Our Team</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Main Page -->
+    <section class="intro">
+        <div class="inner">     
+            <div class="content">
+                <section class="os-animation animated bounceInUp" data-os-animation="bounceInUp" data-os-animation="0s" style="animation-delay: 0s">
+                    <h1><b>Game It Up</b></h1>
+                </section>
+                <section class="os-animation animated bounceInUp" data-os-animation="bounceInUp" data-os-animation=".1s" style="animation-delay: .1s">
+                    <a class="btn-find" href="/auth/findgame">Find Game</a>
+                </section>
+                <br>
+                
+                <section class="os-animation animated bounceInUp" data-os-animation="bounceInUp" data-os-animation=".1s" style="animation-delay: .1s">
+                    <a class="btn-create" href="/auth/creategame">Create Game</a>
+                </section>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section -->
+    
+    <!-- Header -->
+<header class="text-center py-5 mb-4">
+    <div class="container"> 
+        <h1 class="font-weight-light" id="headerabout">Meet the Team</h1>
+        <p class="aboutp">We are a team of developers who are truly passionate about coding. Together, we wanted to create an application
+            where people can meet one another through recreational sports.</p>
+    </div>
+</header>
+  
+  <!-- Page Content -->
   <div class="container">
     <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+      <!-- Phi Tran Bio -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <a id="aboutname" href="https://ptran12.github.io/Official-Portfolio/" target="_blank"><img src="./Screen Shot 2019-02-06 at 6.15.01 PM.png" class="card-img-top" alt="..."></a>
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Phi Tran</h5>
+            <div class="card-text text-black-50">Front End Developer</div>
           </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+        </div>
+      </div>
+      <!-- Markie Ruiz Bio -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <a id="aboutname" href="https://github.com/markieruiz" target="_blank"><img src="./Screen Shot 2019-02-06 at 6.09.59 PM.png" class="card-img-top" alt="..."></a>
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Markie Ruiz</h5>
+            <div class="card-text text-black-50">Front End Web Developer</div>
           </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Login to google:</h3> --}}
-
-
-        {{!-- <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul> --}}
-
-
-        {{!-- <ul>
-          <li><a href="/auth/logout">Logout</a></li>
-          <li><a href="/auth/login">Login</a></li>
-          <li><a href="/">Homepage</a></li>
-        </ul>
-        <main>
-          <a class="google-btn" href="/auth/google">Google+</a>
-        </main>
+        </div>
+      </div>
+      <!-- Joel Fecke Bio -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <img src="" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0"><a id="aboutname" href="https://github.com/jfecke" target="_blank">Joel Fecke</a></h5>
+            <div class="card-text text-black-50">Back End Web Developer</div>
+          </div>
+        </div>
+      </div>
+      <!-- Harpal Assio Bio -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <a id="aboutname" href="https://github.com/harpalassi" target="_blank"><img src=".//Screen Shot 2019-02-06 at 6.10.16 PM.png" class="card-img-top" alt="..."></a>
+            <div class="card-body text-center"></a>
+            <h5 class="card-title mb-0">Harpal Assi</h5>
+            <div class="card-text text-black-50">Back End Web Developer</div>
+          </div>
+        </div>
       </div>
     </div>
+    <!-- /.row -->
+  
   </div>
-</div>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script> --}}
+  <!-- /.container -->
+  <!-- JS for Scroll Down -->
+    <script>
+        $('#myLinkToBottom').click(function () {
+            $('html, body').animate({ scrollTop: $(document).height() }, 'slow');
+            return false;
+        });
+    </script>
+</body>
+</html>
