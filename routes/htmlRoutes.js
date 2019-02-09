@@ -20,18 +20,21 @@ module.exports = function(app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/findGame/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.render("findGame", {
-        example: dbExample
-      });
-    });
-  });
-
+  // app.get("/findGame/:id", function(req, res) {
+  //   db.Example.findOne({ where: { id: req.params.id } }).then(function(
+  //     dbExample
+  //   ) {
+  //     res.render("findGame", {
+  //       example: dbExample
+  //     });
+  //   });
+  // });
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
+  });
+
+  app.get("/find", function(req, res) {
+    res.render("findGame");
   });
 };
