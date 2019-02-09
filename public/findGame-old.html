@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Find your Game!</title>
+	<link rel="stylesheet" type="text/css" href="./styles/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/test.js"></script>
+</head>
+
+<body class="find">
+
+	<body class="wallpaper">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="/">Game It Up</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="/create">Create a Game</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/">Our Team</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="main-container">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<form class="text-center p-5">
+							<p class="h4 mb-4">Find a Game</p>
+							<form>
+									<input id="myloc" type="text" value="30.267140, -97.743076">
+							<input type="text" id="defaultContactFormLocation" class="form-control mb-4" placeholder="Location">
+							<input type="number" name="distance" id="distance" value="10">
+							</form>
+							<label><b>Sports</b></label>
+							<select class="browser-default custom-select mb-4">
+								<option value="" disabled>Choose Sports</option>
+								<option value="1" selected>Basketball</option>
+								<option value="2">Flag Football</option>
+								<option value="3">Tennis</option>
+								<option value="4">Ultimate Frisbee</option>
+							</select>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div id="map-canvas">
+								<style>
+									#map {
+										height: 500px;
+										width: 500px;
+										margin: 10px auto;
+									}
+									#form {
+										margin: 10px auto;
+									}
+								</style>
+							</div>
+						</div>
+
+						<div id="map"></div>
+						<!-- <script>
+
+						</script> -->
+						<script
+							src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeVsDpithk85NHs2VG00TxrDQnM6PfMcg&callback=initMap"
+							async defer></script>
+					</div>
+				</div>
+			</div>
+
+			<div id="form">
+				<form>
+					<input id="myloc" type="text" value="30.267140, -97.743076">
+					<input type="number" name="distance" id="distance" value="10">
+					<input type="checkbox" class="sports" name="baseball" id="baseball">Baseball
+					<input type="checkbox" class="sports" name="basketball" id="basketball" checked>Basketball
+					<input type="checkbox" class="sports" name="soccer" id="soccer">Soccer
+					<input type="datetime-local" name="starttime" id="starttime" value="2019-02-25T15:30">No Later Than
+					<input type="submit" name="submit" id="test">
+				</form>
+			</div>
+
+
+
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+				integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+				crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+				integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+				crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+				integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+				crossorigin="anonymous"></script>
+	</body>
+</body>
+
+</html>

@@ -9,12 +9,12 @@
   <link rel="stylesheet" type="text/css" href="./styles/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="js/test.js"></script>
 </head>
 
 <body class="create">
 
   <!-- Nav Bar -->
-
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/">Game It Up</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -53,9 +53,9 @@
             <select class="browser-default custom-select mb-4">
               <option value="" disabled>Choose Sports</option>
               <option value="1" selected>Basketball</option>
-              <option value="2">Flag Football</option>
-              <option value="3">Tennis</option>
-              <option value="4">Ultimate Frisbee</option>
+              <option value="2">Baseball</option>
+              <option value="3">Soccer</option>
+              <!-- <option value="4">Ultimate Frisbee</option> -->
             </select>
 
             <!-- Message -->
@@ -72,12 +72,24 @@
         </div>
 
         <!-- Google Maps  -->
-        <div class="col-md-6" id="googlemaps">
-          Container Right
+        <!-- <div class="col-md-6" id="googlemaps"> -->
+        <div class="col-md-6">
+          <div id="map"></div>
+          <style>
+            #map {
+              height: 500px;
+              width: 500px;
+            }
+          </style>
         </div>
       </div>
+
     </div>
   </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeVsDpithk85NHs2VG00TxrDQnM6PfMcg&callback=initMap"
+    async defer>
+    </script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
