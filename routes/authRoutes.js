@@ -19,6 +19,10 @@ router.get("/login", authCheck, function(req, res) {
   res.render("index");
 });
 
+router.get("/", function(req, res) {
+  res.render("index", { user: req.user });
+});
+
 router.get("/findgame", authCheck, function(req, res) {
   res.redirect("/findGame");
 });
@@ -33,7 +37,7 @@ router.get("/logout", function(req, res) {
   console.log("logging out");
   req.logout();
   req.session = null;
-  res.redirect("/");
+  res.render("index", { user: req.user });
 });
 
 //auth with google
@@ -50,7 +54,7 @@ router.get("/google/redirect", passport.authenticate("google"), function(
   res
 ) {
   // res.send(req.user)
-  res.redirect("/");
+  res.render("index", { user: req.user });
 });
 
 module.exports = router;
