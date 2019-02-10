@@ -24,7 +24,7 @@ router.get("/", function(req, res) {
 });
 
 router.get("/findgame", authCheck, function(req, res) {
-  res.redirect("/findGame");
+  res.render("findGame", { user: req.user });
 });
 
 router.get("/creategame", authCheck, function(req, res) {
