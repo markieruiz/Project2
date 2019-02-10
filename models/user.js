@@ -8,10 +8,14 @@ module.exports = function(sequelize, DataTypes) {
     User.hasMany(models.Meetup, {
       onDelete: "cascade"
     });
+    User.hasMany(models.Joinmeetup, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
     User.hasMany(models.Remark, {
       onDelete: "cascade"
     });
-    //User.hasMany(models.Users, { as: "Friend", through: "friends" });
   };
 
   return User;

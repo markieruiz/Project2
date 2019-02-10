@@ -13,6 +13,11 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     });
+    Meetup.hasMany(models.Joinmeetup, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
     Meetup.hasMany(models.Remark, {
       onDelete: "cascade"
     });
