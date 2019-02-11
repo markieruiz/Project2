@@ -25,4 +25,3 @@ module.exports = function(sequelize, DataTypes) {
 
   return Meetup;
 };
-//http://docs.sequelizejs.com/manual/tutorial/associations.html
