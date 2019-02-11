@@ -1,0 +1,132 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Yantramanav:100');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400');
+
+/* Nav Bar Style */
+.navbar a {
+    color: orange;
+    font-style: italic;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.intro {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background: url(https://images.unsplash.com/photo-1544919982-b61976f0ba43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2110&q=80) no-repeat 50%;
+    display:table;
+    top: 0;
+    background-size: cover;
+}
+
+.intro .inner {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    max-width: none;
+}
+
+.content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 600%;
+    font-weight: 300;
+    color: orange;
+    line-height: 120%;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.btn-find {
+    font-family: "Montserrat", sans-serif;
+    font-size: 200%;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+    background: black;
+    text-decoration: none;
+    padding-bottom: 30px;
+    border: solid;
+    padding: 10px 20px;
+    border-radius: 9px;
+}
+
+.btn-create {
+    font-family: "Montserrat", sans-serif;
+    font-size: 200%;
+    font-weight: 500;
+    color: whitesmoke;
+    background: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: solid;
+    padding: 10px 20px;
+    border-radius: 9px;
+}
+
+.btn-find:hover {
+    color: tan;
+}
+
+.btn-create:hover {
+    color:tan;
+}
+
+/* About Us Styling */
+#aboutname:hover {
+    color:black;
+    font-family: "Yantramanav", sans-serif;
+    text-decoration: none;
+    opacity: 0.5;
+}
+
+/* Create Game Page Styling */
+.col-md-6  {
+    padding-top: 50px;
+}
+
+.create {
+    background: url(https://images.unsplash.com/photo-1547934045-2942d193cb49?ixlib=rb-1.2.1&auto=format&fit=crop&w=2110&q=80);
+}
+
+/* Find Game Page Styling */
+.find {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background: 
+    url(https://images.unsplash.com/photo-1497292348804-01ddc743bcb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80); 
+    /* url(https://cryptocurry.com/wp-content/uploads/2017/10/Blockchain-Technology-And-The-Sports-Industry.jpg);  */
+    display:table;
+    background-size: cover;
+}
+
+input[id=distance] {
+    height: 25px;
+    width: 50px;
+    text-align: center;
+    background-color: #007bff;
+    border-color: black;
+    color: white;
+}
+
+input[type=checkbox] {
+    margin: 8px;
+    /* border: 1px dotted #999;
+    border-radius: 0;  */
+
+}
+
+.form-group{
+   color: white;
+} 

@@ -6,7 +6,7 @@ module.exports = function(app) {
  
   app.put("/api/filter", function(req, res) {
     var sports = [];
-    var starttime = new Date();
+    var starttime = req.body.starttime;
     var endtime = req.body.endtime;
     //checks if incoming sports is an array, string, or undefined and sorts it accordingly
     if (typeof(req.body["sports[]"]) != "undefined" && req.body["sports[]"].length> 0 && typeof(req.body["sports[]"]) === "object") {
@@ -39,6 +39,7 @@ module.exports = function(app) {
         //If location is within the required distance it is added to an array 
         var counter = 1;
         if (miles <= req.body.distance) {
+            locations[i].dataValues.distance = miles;
           distanceArray.push(locations[i]);
         }
       }

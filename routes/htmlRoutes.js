@@ -8,7 +8,7 @@ module.exports = function(app) {
 
   //Just for testing
   app.get("/test", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/test.html"));
+    res.sendFile(path.join(__dirname, "../test/findmore.html"));
   });
 
   app.get("/findGame", function(req, res) {
