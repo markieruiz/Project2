@@ -9,8 +9,8 @@
   <link rel="stylesheet" type="text/css" href="../styles/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
- <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="../js/test.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="../js/create.js"></script>
 </head>
 
 <body class="create">
@@ -48,24 +48,26 @@
             <input type="text" id="title" class="form-control mb-4" placeholder="Name">
 
             <!-- Location -->
-            <input type="text" id="location" class="form-control mb-4" placeholder="Location">
+            <input type="text" id="myloc" class="form-control mb-4" placeholder="Location">
 
             <!-- Time -->
-            <input type="text" id="starttime" class="form-control mb-4" placeholder="Time (HH:MM AM or PM)"
+            
+            Date and Time <input type="datetime-local" class="form-control mb-4" name="starttime" id="starttime" value="2019-02-25T15:30"><br>
+
               <!-- Subject -->
             <label><b>Sports</b></label>
-            <select class="browser-default custom-select mb-4">
+            <select class="browser-default custom-select mb-4" id="sports">
               <option value="" disabled>Choose Sports</option>
-              <option value="1" selected>Basketball</option>
-              <option value="2">Baseball</option>
-              <option value="3">Soccer</option>
+              <option value="basketball">Basketball</option>
+              <option value="baseball">Baseball</option>
+              <option value="soccer">Soccer</option>
               <!-- <option value="4">Ultimate Frisbee</option> -->
             </select>
 
             <!-- Message -->
             <div class="form-group">
-              <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"
-                placeholder="Message"></textarea>
+              Description
+              <input id="description" class="form-control mb-4" type="text">
             </div>
 
             <!-- Send button -->
