@@ -8,8 +8,8 @@ $(document).ready(function() {
       title: $("#title").val(),
       description: $("#description").val(),
       sport: $("#sports").val(),
-      longitude: parseFloat(locationSplit[0]).toFixed(6),
-      latitude: parseFloat(locationSplit[1]).toFixed(6),
+      latitude: parseFloat(locationSplit[0]).toFixed(6),
+      longitude: parseFloat(locationSplit[1]).toFixed(6),
       starttime: $("#starttime").val(),
       UserId: $("#creategame").data("id")
     };
