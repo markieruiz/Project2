@@ -1,9 +1,19 @@
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    googleID: DataTypes.STRING
+    firstName: {
+      type: DataTypes.STRING,
+      notEmpty: true
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      notEmpty: true
+    },
+    googleID: {
+      type: DataTypes.STRING,
+      notEmpty: true
+    }
   });
+  
   User.associate = function(models) {
     User.hasMany(models.Meetup, {
       onDelete: "cascade"
