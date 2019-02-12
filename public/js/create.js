@@ -1,8 +1,8 @@
-$(document).ready(function() {
-  $("#creategame").on("click", function(event) {
+$(document).ready(function () {
+  $("#creategame").on("click", function (event) {
     var totalLocation = $("#myloc").val().toString();
     var locationSplit = totalLocation.split(",");
-  
+
     event.preventDefault();
     var mygame = {
       title: $("#title").val(),
@@ -13,21 +13,23 @@ $(document).ready(function() {
       starttime: $("#start").val(),
       UserId: $("#creategame").data("id")
     };
-    
+
     $.post("/api/meetup", mygame,
-      function(data) {
+      function (data) {
         console.log(data);
-        
+
       });
-    
-});
+
+    document.getElementById('title').value = '';
+    document.getElementById('strCreateLoc').value = '';
+    document.getElementById('sports').value = '';
+    document.getElementById('description').value = '';
+    document.getElementById('start').value = '';
   });
 
-
+});
 
 //map 
-
-
 var map;
 var marker = null;
 var markers = [];
@@ -97,19 +99,6 @@ function placeMarkerAndPanTo(latLng, map) {
   });
 }
 
-
-// function placeMarkerAndPanTo(latLng, map) {
-//   marker = new google.maps.Marker({
-//     position: latLng,
-//     map: map
-//   });
-
-//   var lat = marker.getPosition().lat();
-//   var long = marker.getPosition().lng();
-//   var coords = lat + ", " + long;
-//   $("#myloc").val(coords);
-// }
-
 // Sets the map on all markers in the array.
 function setMapOnAll(map) {
   for (let i = 0; i < markers.length; i++) {
@@ -143,3 +132,4 @@ function deleteMarkers() {
   infowindows = [];
   console.log("cleared", markers);
 }
+
