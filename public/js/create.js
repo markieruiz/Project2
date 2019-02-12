@@ -67,7 +67,6 @@ function initMap() {
     }
     placeMarkerAndPanTo(e.latLng, map);
   })
-
 }
 
 function placeMarkerAndPanTo(latLng, map) {
@@ -93,7 +92,6 @@ function placeMarkerAndPanTo(latLng, map) {
       if (results[0]) {
         map.setZoom(12);
         $("#strCreateLoc").val(results[0].formatted_address)
-
       }
     }
   });

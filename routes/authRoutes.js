@@ -15,24 +15,24 @@ function authCheck(req, res, next) {
 }
 
 // auth login
-router.get("/login", authCheck, function(req, res) {
+router.get("/login", authCheck, function (req, res) {
   res.render("index");
 });
 
-router.get("/", function(req, res) {
+router.get("/", function (req, res) {
   res.render("index", { user: req.user });
 });
 
-router.get("/findgame", authCheck, function(req, res) {
+router.get("/findgame", authCheck, function (req, res) {
   res.render("findGame", { user: req.user });
 });
 
-router.get("/creategame", authCheck, function(req, res) {
+router.get("/creategame", authCheck, function (req, res) {
   res.render("create", { user: req.user });
 });
 
 // auth logout
-router.get("/logout", function(req, res) {
+router.get("/logout", function (req, res) {
   //handle with passport
   console.log("logging out");
   req.logout();
@@ -49,7 +49,7 @@ router.get(
 );
 
 //callback route for google to redirect to
-router.get("/google/redirect", passport.authenticate("google"), function(
+router.get("/google/redirect", passport.authenticate("google"), function (
   req,
   res
 ) {
