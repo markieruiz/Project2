@@ -41,42 +41,43 @@
       <div class="row">
         <div class="col-md-6">
           <!-- Default form contact -->
-          <form class="text-center p-5">
+          <form class="text-center p-5" id="myform">
+            <form id="myform">
+              <p class="h4 mb-4">Create A New Game</p>
 
-            <p class="h4 mb-4">Create A New Game</p>
+              <!-- Name -->
+              <input type="text" id="title" class="form-control mb-4" placeholder="Name" required>
 
-            <!-- Name -->
-            <input type="text" id="title" class="form-control mb-4" placeholder="Name" required>
+              <!-- Location -->
+              <input type="hidden" id="myloc" class="form-control mb-4" placeholder="Location" required>
+              <input type="text" id="strCreateLoc" class="form-control mb-4" placeholder="Location" required>
 
-            <!-- Location -->
-            <input type="hidden" id="myloc" class="form-control mb-4" placeholder="Location" required>
-            <input type="text" id="strCreateLoc" class="form-control mb-4" placeholder="Location" required>
+              <!-- Time -->
 
-            <!-- Time -->
-            
-            Date and Time <input type="datetime-local" class="form-control mb-4" name="start" id="start" value="2019-02-25T15:30" required><br>
+              Date and Time <input type="datetime-local" class="form-control mb-4" name="start" id="start"
+                value="2019-02-25T15:30" required><br>
 
               <!-- Subject -->
-            <label><b>Sports</b></label>
-            <select class="browser-default custom-select mb-4" id="sports">
-              <option value="" disabled>Choose Sports</option>
-              <option value="basketball">Basketball</option>
-              <option value="baseball">Baseball</option>
-              <option value="soccer">Soccer</option>
-              <!-- <option value="4">Ultimate Frisbee</option> -->
-            </select>
+              <label><b>Sports</b></label>
+              <select class="browser-default custom-select mb-4" id="sports">
+                <option value="" disabled>Choose Sports</option>
+                <option value="basketball">Basketball</option>
+                <option value="baseball">Baseball</option>
+                <option value="soccer">Soccer</option>
+                <!-- <option value="4">Ultimate Frisbee</option> -->
+              </select>
 
-            <!-- Message -->
-            <div class="form-group">
-              Description
-              <input id="description" class="form-control mb-4" type="text" required>
-            </div>
-
+              <!-- Message -->
+              <div class="form-group">
+                Description
+                <input id="description" class="form-control mb-4" type="text" required>
+              </div>
+            </form>
             <!-- Send button -->
             <button class="btn btn-info btn-block" id="creategame" data-id={{user.id}} type="submit">Send</button>
 
           </form>
-          <!-- Default form contact -->
+
         </div>
 
         <!-- Google Maps  -->
