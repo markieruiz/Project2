@@ -5,14 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Game It Up</title>
-	<link rel="stylesheet" type="text/css" href="../styles/style.css">
+	<title>Find your Game!</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/lumen/bootstrap.min.css" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="../js/test.js"></script>
-	<script src="../js/app.js"></script>
+	<script src="../../js/app.js"></script>
+	<script src="../../js/find.js"></script>
 </head>
 
 <body class="find">
@@ -35,84 +35,93 @@
 	</nav>
 
 	<div class="row">
-		<div class="container mt-5" id="inputgame">
+		<div class="container mt-5">
 			<div class="row" style="height:100px;">
-				<div class="col-lg-6">
-					<h2 class="text-uppercase font-weight-bold text-white">Find A Game!</h2>
-					<form action="">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="form-group">
-									<input type="hidden" id="myloc" type="text" value="30.267140, -97.743076">
+				<div class="col-lg-12">
+					<h2 class="text-uppercase font-weight-bold text-white">Step up your GAME!</h2>
+					<div id="filterbar">
+						<div class="filter">
+							<p>Your Location</p>
+							<input type="text" id="mylocation"  placeholder="123 Any Street, City, ST">
+						</div>
+						<div class="filter">
+								<div class="filter2">  
+									<p>Start Time</p>
+									<input class="time" type="datetime-local" id="starttime">
 								</div>
+								<div class="filter2">
+									<p>End Time</p>
+									<input class="time" type="datetime-local" id="endtime">
+								</div>
+						</div>
+						<div class="filter">
+							<p>What would you like to play?</p>
+							<input type="checkbox" class="sports" id="baseball" checked>Baseball
+							<input type="checkbox" class="sports" id="basketball">Basketball
+							<input type="checkbox" class="sports" id="soccer">Soccer
+						</div>
+						<div class="filter">
+							<p>Distance</p>
+							<input class="small" type="number" id="distance" value="10"> Miles
+						</div>
+						<input type="submit" value="Find Games" data-id={{user.id}}  id="findgames">
+					</div>
+					<div id="allresults">
+						<div id="cardresults">
+							<div class="card">
+								<h3>Results</h3>
 							</div>
 						</div>
-
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="form-group text-white">
-									<!-- <input type="date" name="startdate" id="startdate" value="2019-02-25">
-											<input type="time" name="time" id="time" value="T15:30"> -->
-									<label>When do you want to play?</label>
-									<input type="datetime-local" name="starttime" id="starttime" value="2019-02-25T15:30">
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="form-group text-white">
-									<p>Select from the following games:</p>
-									<input type="checkbox" class="sports" name="baseball" id="baseball" checked>Baseball
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="form-group text-white">
-									<input type="checkbox" class="sports" name="basketball" id="basketball" checked>Basketball
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="form-group text-white">
-									<input type="checkbox" class="sports" name="soccer" id="soccer" checked>Soccer
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-lg-6 text-white">
-								<p>Click a location on the map.</p>
-								<div class="form-group">
-									<label>Find games within <input type="number" name="distance" id="distance" value="10"> miles!</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="form-group">
-									<input type="submit" name="submit" id="test" data-id={{user.id}} value="Search">
-								</div>
-							</div>
-						</div>
-
-					</form>
-				</div>
-
-				<div id="map"></div>
+						<div id="map"></div>
+					</div>
+					
 				<style>
 					#map {
-						height: 500px;
-						width: 500px;
+						height: 550px;
+						width: 550px;
+						float: right;
 					}
+					.filter2 {
+						display: inline-block;
+						color: white;
+					}
+					.filter {
+						display: inline-block;
+						color: white;
+						margin: 0 5px;
+					}
+					.time {
+						width: 175px;
+					}
+					.small {
+						width: 50px;
+					}
+					#allresults {
+						margin-top: 50px;
+					}
+					.card {
+						width: 500px;
+						
+						cursor: pointer;
+					}
+					.card p {
+						margin-bottom: 0px;
+					}
+					.card h3 {
+						text-align: center;
+					}
+					#cardresults {
+						width: 550px;
+						float: left;
+						overflow-y: scroll; 
+						height: 600px;
+					}
+
 				</style>
+				</div>
 
 			</div>
+			
 		</div>
 	</div>
 
