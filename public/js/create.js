@@ -10,7 +10,7 @@ $(document).ready(function() {
       sport: $("#sports").val(),
       latitude: parseFloat(locationSplit[0]).toFixed(6),
       longitude: parseFloat(locationSplit[1]).toFixed(6),
-      starttime: $("#starttime").val(),
+      starttime: $("#start").val(),
       UserId: $("#creategame").data("id")
     };
     
@@ -50,17 +50,65 @@ function initMap() {
   });
 }
 
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 30.314786, lng: -97.738267 },
+    zoom: 12
+  });
+
+  map.addListener("click", function (e) {
+    if (marker !== null) {
+      marker.setMap(null);
+    }
+    for (let j = 0; j < infowindows.length; j++) {
+      infowindows[j].close();
+    }
+    placeMarkerAndPanTo(e.latLng, map);
+  })
+
+}
+
 function placeMarkerAndPanTo(latLng, map) {
   marker = new google.maps.Marker({
     position: latLng,
     map: map
   });
-
+  var geocoder = new google.maps.Geocoder;
   var lat = marker.getPosition().lat();
   var long = marker.getPosition().lng();
   var coords = lat + ", " + long;
+  var latlngStr = coords.split(',', 2);
+  var strLoc = { lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1]) };
+
   $("#myloc").val(coords);
+
+  console.log(coords);
+  console.log(strLoc);
+  console.log(coords);
+
+  geocoder.geocode({ 'location': strLoc }, function (results, status) {
+    if (status === 'OK') {
+      if (results[0]) {
+        map.setZoom(12);
+        $("#strCreateLoc").val(results[0].formatted_address)
+
+      }
+    }
+  });
 }
+
+
+// function placeMarkerAndPanTo(latLng, map) {
+//   marker = new google.maps.Marker({
+//     position: latLng,
+//     map: map
+//   });
+
+//   var lat = marker.getPosition().lat();
+//   var long = marker.getPosition().lng();
+//   var coords = lat + ", " + long;
+//   $("#myloc").val(coords);
+// }
 
 // Sets the map on all markers in the array.
 function setMapOnAll(map) {
