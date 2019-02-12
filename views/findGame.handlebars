@@ -39,11 +39,20 @@
 			<div class="row" style="height:100px;">
 				<div class="col-lg-6">
 					<h2 class="text-uppercase font-weight-bold text-white">Find A Game!</h2>
-					<form action="">
+					<form action="" id="findForm">
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="form-group">
 									<input type="hidden" id="myloc" type="text" value="30.267140, -97.743076">
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-6 text-white">
+								<p>Click a location on the map.</p>
+								<div class="form-group">
+									<label>Find games within <input type="number" name="distance" id="distance" value="10"> miles!</label>
 								</div>
 							</div>
 						</div>
@@ -80,15 +89,6 @@
 							<div class="col-lg-6">
 								<div class="form-group text-white">
 									<input type="checkbox" class="sports" name="soccer" id="soccer" checked>Soccer
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-lg-6 text-white">
-								<p>Click a location on the map.</p>
-								<div class="form-group">
-									<label>Find games within <input type="number" name="distance" id="distance" value="10"> miles!</label>
 								</div>
 							</div>
 						</div>
