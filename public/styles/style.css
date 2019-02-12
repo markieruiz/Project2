@@ -97,6 +97,9 @@ html, body {
 
 .create {
     background: url(https://images.unsplash.com/photo-1547934045-2942d193cb49?ixlib=rb-1.2.1&auto=format&fit=crop&w=2110&q=80);
+    /* background: url(https://images.unsplash.com/photo-1497292348804-01ddc743bcb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80); */
+    display:table;
+    background-size: cover;
 }
 
 /* Find Game Page Styling */
@@ -105,8 +108,9 @@ html, body {
     width: 100%;
     margin: auto;
     background: 
-    url(https://images.unsplash.com/photo-1497292348804-01ddc743bcb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80); 
+    /* url(https://images.unsplash.com/photo-1497292348804-01ddc743bcb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80);  */
     /* url(https://cryptocurry.com/wp-content/uploads/2017/10/Blockchain-Technology-And-The-Sports-Industry.jpg);  */
+    /* url(https://a56.asmdc.org/sites/a56.asmdc.org/files/press_release/Soccer-Ball-and-Field.png);  */
     display:table;
     background-size: cover;
 }
@@ -122,11 +126,19 @@ input[id=distance] {
 
 input[type=checkbox] {
     margin: 8px;
-    /* border: 1px dotted #999;
-    border-radius: 0;  */
-
 }
 
-/* .form-group{
-    background-color: white;
-} */
+.col-lg-6 {
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+    
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+   
+}
+
+
