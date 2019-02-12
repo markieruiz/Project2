@@ -24,6 +24,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
+        <li class="nav-item nav-link">Welcome, {{user.firstName}}</li>
         <li class="nav-item">
           <a class="nav-link" href="/auth/findgame">Find Game</a>
         </li>
@@ -45,14 +46,14 @@
             <p class="h4 mb-4">Create A New Game</p>
 
             <!-- Name -->
-            <input type="text" id="title" class="form-control mb-4" placeholder="Name">
+            <input type="text" id="title" class="form-control mb-4" placeholder="Name" required>
 
             <!-- Location -->
-            <input type="text" id="myloc" class="form-control mb-4" placeholder="Location">
+            <input type="text" id="myloc" class="form-control mb-4" placeholder="Location" required>
 
             <!-- Time -->
             
-            Date and Time <input type="datetime-local" class="form-control mb-4" name="starttime" id="starttime" value="2019-02-25T15:30"><br>
+            Date and Time <input type="datetime-local" class="form-control mb-4" name="starttime" id="starttime" value="2019-02-25T15:30" required><br>
 
               <!-- Subject -->
             <label><b>Sports</b></label>
@@ -67,7 +68,7 @@
             <!-- Message -->
             <div class="form-group">
               Description
-              <input id="description" class="form-control mb-4" type="text">
+              <input id="description" class="form-control mb-4" type="text" required>
             </div>
 
             <!-- Send button -->
