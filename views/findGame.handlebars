@@ -40,17 +40,19 @@
 				<div class="col-lg-6">
 					<h2 class="text-uppercase font-weight-bold text-white">Find A Game!</h2>
 					<form action="" id="findForm">
+
 						<div class="row">
 							<div class="col-lg-6">
+								<p>Click a location on the map.</p>
 								<div class="form-group">
 									<input type="hidden" id="myloc" type="text" value="30.267140, -97.743076">
+									<input type="text" id="strLoc" type="text" value="Austin, Texas">
 								</div>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-lg-6 text-white">
-								<p>Click a location on the map.</p>
 								<div class="form-group">
 									<label>Find games within <input type="number" name="distance" id="distance" value="10"> miles!</label>
 								</div>
@@ -58,11 +60,11 @@
 						</div>
 
 						<div class="row">
-							<div class="col-lg-6">
+							<div class="col-lg-9">
 								<div class="form-group text-white">
-									<!-- <input type="date" name="startdate" id="startdate" value="2019-02-25">
-											<input type="time" name="time" id="time" value="T15:30"> -->
-									<label>When do you want to play?</label>
+									<label>What date and time do you want to play?</label>
+									{{!-- <input id="today" type="date" value='today'>
+									<input type="time" name="time" id="time" value='now'> --}}
 									<input type="datetime-local" name="starttime" id="starttime" value="2019-02-25T15:30">
 								</div>
 							</div>

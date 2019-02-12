@@ -119,9 +119,7 @@ input[id=distance] {
     height: 25px;
     width: 50px;
     text-align: center;
-    background-color: #007bff;
     border-color: black;
-    color: white;
 }
 
 input[type=checkbox] {
@@ -134,11 +132,26 @@ input[type=checkbox] {
 		1px -1px 0 #000,
 		-1px 1px 0 #000,
 		1px 1px 0 #000;
-    
     color: white;
     font-size: 16px;
     font-weight: bold;
-   
 }
 
+#strLoc {
+    width: 300px;
+    height: 30px;
+    border: 2,2,2,2;
+    padding: 0 0 0 0;
+    font-size: 12px;
+    font-weight: bold;
+    background: grey;
+}
 
+input[id=starttime] {
+    width: 300px;
+    height: 30px;
+    border: 2,2,2,2;
+    padding: 0 0 0 0;
+    font-size: 12px;
+    font-weight: bold;
+}
