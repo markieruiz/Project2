@@ -16,9 +16,8 @@ $(function() {
       osTrigger.waypoint(function() {
         osElement.addClass("animated").addClass(osAnimationClass);
       },{
-        {
           triggerOnce: true,
-        offset: "80%"
+          offset: "80%"
       });
     });
   }

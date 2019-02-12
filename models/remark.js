@@ -1,6 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
   var Remark = sequelize.define("Remark", {
-    text: DataTypes.STRING
+    text: {
+      type: DataTypes.STRING,
+      notEmpty: true
+    }
   });
   Remark.associate = function(models) {
     Remark.belongsTo(models.Meetup, {
